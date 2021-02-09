@@ -16,7 +16,9 @@ public class Done_BGScroller : MonoBehaviour
 
 	void Update ()
 	{
-		float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileWidth);
-		transform.position = startPosition + Vector3.left * newPosition;
+		if(GameControl.instance.gameOver == false){
+			float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileWidth);
+			transform.position = startPosition + Vector3.left * newPosition;
+		}
 	}
 }
